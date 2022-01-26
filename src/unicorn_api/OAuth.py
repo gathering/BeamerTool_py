@@ -5,13 +5,11 @@ import flask
 import requests
 import requests_oauthlib
 
-from flask import current_app
 
 class OAuthSignIn(object):
     providers = None
 
     def __init__(self, client_id, client_secret,auth_url,token_url):
-        print(auth_url)
         self.auth_url=auth_url
         self.token_url=token_url
         self.client_id = client_id
