@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tested the api</title>
+</head>
+<body>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax">key</th>
+    <th class="tg-0lax">value</th>
+  </tr>
+</thead>
+    {% for key,value in compodata.items() %}
+<tbody>
+    <td class="tg-0lax">{{key}}</td>
+    <td class="tg-0lax"><a href=/testapi?apiurl={{value}}>{{value}}</td>
+</tbody>
+    {% endfor %}
+
+</table>
+ body:
+
+
+
+</body>
+</html>
