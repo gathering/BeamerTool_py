@@ -21,9 +21,8 @@ class OAuthSignIn(object):
         simplelogin = requests_oauthlib.OAuth2Session(
             self.client_id, redirect_uri="http://localhost:5000/callback"
         )
-        print(self.auth_url)
+
         authorization_url,_ = simplelogin.authorization_url(self.auth_url)
-        print(authorization_url)
         return authorization_url
 
     def callback(self):
@@ -33,13 +32,6 @@ class OAuthSignIn(object):
         print("requesting access token")
         access_token_response = requests.post(self.token_url, data=data, verify=False, allow_redirects=True,
                                               auth=(self.client_id, self.client_secret))
-
-        print(access_token_response)
-        print("response")
-        print(access_token_response.headers)
-        print('body: ' + access_token_response.text)
-
-        # we can now use the access_token as much as we want to access protected resources.
         tokens = json.loads(access_token_response.text)
         access_token = tokens['access_token']
         print("access token: " + access_token)
