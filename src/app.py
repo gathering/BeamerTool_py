@@ -6,8 +6,6 @@ import os
 import dotenv
 from src.unicorn_api.OAuth import OAuthSignIn
 
-
-
 app = Flask(__name__)
 dotenv.load_dotenv()
 client_secret = os.environ.get('CLIENT_SECRET')
@@ -30,7 +28,6 @@ def logout():
 @app.route('/login/')
 def oauth_authorize():
     authorizeurl=oauth.authorize()
-    print(authorizeurl)
     return redirect(authorizeurl)
 
 
@@ -40,14 +37,15 @@ def oauth_callback():
     access = oauth.callback()
     return render_template("return.html",access_token=access)
 
-@app.route('/testapi/')
+@app.route('/urlhandler/')
 def testapi():
-    api=request.args.get('apiurl')
+    api_url=request.args.get('apiurl')
     api_call_headers = {'Authorization': 'Bearer ' + access}
-    api_call_response = requests.get(api, headers=api_call_headers,
+    api_call_response = requests.get(api_url, headers=api_call_headers,
                                      verify=False)
     jsondata=json.loads(api_call_response.text)
-    return render_template('testapi.html', compodata=jsondata)
+
+    return render_template('imageslider.html', compodata=jsondata)
 
 
 if __name__ == '__main__':

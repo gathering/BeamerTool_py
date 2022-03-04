@@ -5,6 +5,9 @@
     <orderEntry type="jdk" jdkName="3.6 @ Ubuntu-18.04" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="\\wsl$\Ubuntu-18.04\home\kristebo\gitshit\BeamerTool_py\src\requirements.txt" />
+  </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
     <option name="myDocStringFormat" value="Plain" />

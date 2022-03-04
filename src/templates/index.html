@@ -1,11 +1,11 @@
-<html>
-    <head>
-        <title>OAuth Flask Demo</title>
-    </head>
-    <body>
-        <h1>OAuth Demo</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Login {% endblock %}</h1>
+
+        <div class='message'>
             <p><a href="/logout">Logout</a></p>
             <h2>I don't know you!</h2>
-            <p><a href="/login">Login with SimpleLogin</a></p>
-    </body>
-</html>
+            <p><a href="/login">Login with Unicorn</a></p>
+        </div>
+{% endblock %}
